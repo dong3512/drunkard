@@ -9,7 +9,6 @@ public class DrinkMainController {
 
     @GetMapping("/main")
     public String get() {
-        return "1111";
-
+        return "MAIN";
     }
 }
