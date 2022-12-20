@@ -1,4 +1,4 @@
-package com.bsntech.first.domain;
+package com.bsntech.first.domain.drinkwiki;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
