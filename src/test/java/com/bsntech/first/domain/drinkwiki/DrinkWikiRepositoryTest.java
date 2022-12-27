@@ -1,25 +1,28 @@
-package com.bsntech.first.domain;
+package com.bsntech.first.domain.drinkwiki;
 
-import com.bsntech.first.domain.drinkwiki.DrinkWiki;
-import com.bsntech.first.domain.drinkwiki.DrinkWikiRepository;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.After;
+import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class DrinkWikiRepositoryTest {
 
     @Autowired
     private DrinkWikiRepository drinkWikiRepository;
 
-    @BeforeEach
-    void clean() {
+    @After
+    public void cleanup() {
         drinkWikiRepository.deleteAll();
     }
 
@@ -38,8 +41,8 @@ public class DrinkWikiRepositoryTest {
 
         // then
         DrinkWiki drinkWiki = drinkWikiList.get(0);
-        assertEquals(drinkWiki.getTitle() , "제목");
-        assertEquals(drinkWiki.getContent() , "내용");
+        assertThat(drinkWiki.getTitle() , is("제목"));
+        assertThat(drinkWiki.getContent() ,is ("내용"));
     }
 
 }
