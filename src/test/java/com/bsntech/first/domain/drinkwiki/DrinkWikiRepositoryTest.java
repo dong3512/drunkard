@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -43,6 +44,27 @@ public class DrinkWikiRepositoryTest {
         DrinkWiki drinkWiki = drinkWikiList.get(0);
         assertThat(drinkWiki.getTitle() , is("제목"));
         assertThat(drinkWiki.getContent() ,is ("내용"));
+    }
+
+    @Test
+    @DisplayName("BaseTimeEntity_등록")
+    public void test2() {
+        // given
+        LocalDateTime now = LocalDateTime.now();
+
+        drinkWikiRepository.save(DrinkWiki.builder()
+                .title("테스트 게시글")
+                .content("테스트 내용")
+                .author("동인리")
+                .build());
+
+        // when
+        List<DrinkWiki> drinkWikiList = drinkWikiRepository.findAll();
+
+        // then
+        DrinkWiki drinkWiki = drinkWikiList.get(0);
+        assertTrue(drinkWiki.getCreatedDate().isAfter(now));
+        assertTrue(drinkWiki.getModifiedDate().isAfter(now));
     }
 
 }

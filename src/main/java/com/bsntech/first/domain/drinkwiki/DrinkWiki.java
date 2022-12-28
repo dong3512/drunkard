@@ -1,5 +1,6 @@
 package com.bsntech.first.domain.drinkwiki;
 
+import com.bsntech.first.domain.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class DrinkWiki {
+public class DrinkWiki extends BaseTimeEntity {
 
     @Id
     @GeneratedValue
