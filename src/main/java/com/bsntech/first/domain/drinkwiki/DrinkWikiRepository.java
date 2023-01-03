@@ -2,14 +2,11 @@ package com.bsntech.first.domain.drinkwiki;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Service;
 
 import java.util.stream.Stream;
 
-public interface DrinkWikiRepository extends JpaRepository<DrinkWiki, Long> {
+public interface DrinkWikiRepository extends JpaRepository<Drinkwiki, Long> {
 
-    @Query("SELECT p" +
-            "FROM DRINK_WIKI" +
-            "ORDER BY p.id DESC")
-    Stream<DrinkWiki> findAllDesc();
+    @Query("SELECT d FROM Drinkwiki d ORDER BY d.id DESC")
+    Stream<Drinkwiki> findAllDesc();
 }

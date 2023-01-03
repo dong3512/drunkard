@@ -1,12 +1,10 @@
 package com.bsntech.first.controller;
 
-import com.bsntech.first.domain.drinkwiki.DrinkWiki;
+import com.bsntech.first.domain.drinkwiki.Drinkwiki;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 
 @Getter
 @Setter
@@ -24,8 +22,8 @@ public class DrinkwikiSaveRequestDto {
         this.author = author;
     }
 
-    public DrinkWiki toEntity() {
-        return DrinkWiki.builder()
+    public Drinkwiki toEntity() {
+        return Drinkwiki.builder()
                 .title(title)
                 .content(content)
                 .author(author)

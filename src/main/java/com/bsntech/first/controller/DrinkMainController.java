@@ -16,11 +16,6 @@ public class DrinkMainController {
 
     private DrinkwikiService drinkwikiService;
 
-    @GetMapping("/main")
-    public String get() {
-        return "MAIN";
-    }
-
     @PostMapping("/drinkwikis")
     public Long saveDrinkwiki(@RequestBody DrinkwikiSaveRequestDto dto) {
         return drinkwikiService.save(dto);

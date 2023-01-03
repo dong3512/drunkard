@@ -17,7 +17,7 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DrinkWikiRepositoryTest {
+public class DrinkwikiRepositoryTest {
 
     @Autowired
     private DrinkWikiRepository drinkWikiRepository;
@@ -31,17 +31,17 @@ public class DrinkWikiRepositoryTest {
     @DisplayName("게시글저장_불러오기")
     public void test1() {
         //given
-        drinkWikiRepository.save(DrinkWiki.builder()
+        drinkWikiRepository.save(Drinkwiki.builder()
                 .title("제목")
                 .content("내용")
                 .author("작성자")
                 .build());
 
         //when
-        List<DrinkWiki> drinkWikiList = drinkWikiRepository.findAll();
+        List<Drinkwiki> drinkwikiList = drinkWikiRepository.findAll();
 
         // then
-        DrinkWiki drinkWiki = drinkWikiList.get(0);
+        Drinkwiki drinkWiki = drinkwikiList.get(0);
         assertThat(drinkWiki.getTitle() , is("제목"));
         assertThat(drinkWiki.getContent() ,is ("내용"));
     }
@@ -52,17 +52,17 @@ public class DrinkWikiRepositoryTest {
         // given
         LocalDateTime now = LocalDateTime.now();
 
-        drinkWikiRepository.save(DrinkWiki.builder()
+        drinkWikiRepository.save(Drinkwiki.builder()
                 .title("테스트 게시글")
                 .content("테스트 내용")
                 .author("동인리")
                 .build());
 
         // when
-        List<DrinkWiki> drinkWikiList = drinkWikiRepository.findAll();
+        List<Drinkwiki> drinkwikiList = drinkWikiRepository.findAll();
 
         // then
-        DrinkWiki drinkWiki = drinkWikiList.get(0);
+        Drinkwiki drinkWiki = drinkwikiList.get(0);
         assertTrue(drinkWiki.getCreatedDate().isAfter(now));
         assertTrue(drinkWiki.getModifiedDate().isAfter(now));
     }

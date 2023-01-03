@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class DrinkWiki extends BaseTimeEntity {
+public class Drinkwiki extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,7 @@ public class DrinkWiki extends BaseTimeEntity {
     private String author;
 
     @Builder
-    public DrinkWiki(String title, String content, String author) {
+    public Drinkwiki(String title, String content, String author) {
         this.title = title;
         this.content = content;
         this.author = author;
