@@ -14,7 +14,7 @@ public class webController {
 
     @GetMapping("/")
     public String main(Model model) {
-        model.addAttribute("drinkwiki", drinkwikiService.findAlldesc());
+        model.addAttribute("drinkwiki", drinkwikiService.findAllDesc());
         return "main";
     }
 

@@ -24,7 +24,7 @@ public class DrinkwikiService {
     }
 
     @Transactional(readOnly = true)
-    public List<DrinkwikiMainResponseDto> findAlldesc() {
+    public List<DrinkwikiMainResponseDto> findAllDesc() {
         return drinkWikiRepository.findAllDesc()
                 .map(DrinkwikiMainResponseDto::new)
                 .collect(Collectors.toList());
