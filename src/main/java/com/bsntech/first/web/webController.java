@@ -13,9 +13,14 @@ public class webController {
     private DrinkwikiService drinkwikiService;
 
     @GetMapping("/")
-    public String main(Model model) {
-        model.addAttribute("drinkwiki", drinkwikiService.findAllDesc());
+    public String index(Model model) {
+//        model.addAttribute("drinkwiki", drinkwikiService.findAllDesc());
         return "main";
+    }
+
+    @GetMapping("/drinkwiki/save")
+    public String drinkwikiSave() {
+        return "drinkwiki-save";
     }
 
 }

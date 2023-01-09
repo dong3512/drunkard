@@ -1,13 +1,11 @@
-package com.bsntech.first.controller;
+package com.bsntech.first.web.dto;
 
 import com.bsntech.first.domain.drinkwiki.Drinkwiki;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
-@Setter
 @NoArgsConstructor
 public class DrinkwikiSaveRequestDto {
 

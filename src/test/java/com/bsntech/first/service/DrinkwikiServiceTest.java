@@ -1,6 +1,6 @@
 package com.bsntech.first.service;
 
-import com.bsntech.first.controller.DrinkwikiSaveRequestDto;
+import com.bsntech.first.web.dto.DrinkwikiSaveRequestDto;
 import com.bsntech.first.domain.drinkwiki.Drinkwiki;
 import com.bsntech.first.domain.drinkwiki.DrinkWikiRepository;
 import org.junit.After;

@@ -1,4 +1,4 @@
-package com.bsntech.first.controller;
+package com.bsntech.first.web.dto;
 
 import com.bsntech.first.domain.drinkwiki.Drinkwiki;
 
@@ -6,15 +6,17 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
-public class DrinkwikiMainResponseDto {
+public class DrinkwikiResponseDto {
     private Long id;
     private String title;
+    private String content;
     private String author;
     private String modifiedDate;
 
-    public DrinkwikiMainResponseDto(Drinkwiki entity){
+    public DrinkwikiResponseDto(Drinkwiki entity){
         id = entity.getId();
         title = entity.getTitle();
+        content = entity.getContent();
         author = entity.getAuthor();
         modifiedDate = toStringDateTime(entity.getModifiedDate());
     }
