@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 import javax.persistence.*;
 
 @Getter
+@NoArgsConstructor
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Drinkwiki extends BaseTimeEntity {
 
     @Id
